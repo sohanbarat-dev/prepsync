@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import { useAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function Dashboard() {
   const { user } = useAuth()
@@ -53,12 +54,35 @@ function Dashboard() {
     },
   ]
 
+  // (kept but unused — no breaking changes)
   const stats = [
     { label: 'Topics Completed', value: '0', sub: 'Upload syllabus to start', icon: '✅', color: 'text-purple-600' },
     { label: 'Days Remaining', value: '--', sub: 'Set your exam date', icon: '📅', color: 'text-blue-600' },
     { label: 'Exam Readiness', value: '0%', sub: 'Complete topics to improve', icon: '🎯', color: 'text-emerald-600' },
     { label: 'Study Streak', value: '1', sub: 'Keep it going!', icon: '🔥', color: 'text-amber-500' },
   ]
+
+  // 🔥 Daily Quotes Logic
+  const quotes = [
+    "The best way to get started is to quit talking and begin doing.",
+    "Don’t watch the clock; do what it does. Keep going.",
+    "Success doesn’t come from what you do occasionally, but what you do consistently.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Small progress is still progress.",
+    "Dream it. Wish it. Do it.",
+    "Great things never come from comfort zones.",
+    "Discipline beats motivation."
+  ]
+
+  const [quote, setQuote] = useState('')
+
+  useEffect(() => {
+    const today = new Date().toDateString()
+    const index =
+      today.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) %
+      quotes.length
+    setQuote(quotes[index])
+  }, [])
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -93,18 +117,17 @@ function Dashboard() {
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-          {stats.map((stat, i) => (
-            <div key={i} className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition">
-              <div className="flex items-center justify-between mb-3">
-                <p className="text-gray-400 text-xs font-semibold uppercase tracking-wide">{stat.label}</p>
-                <span className="text-xl">{stat.icon}</span>
-              </div>
-              <h3 className={`text-3xl font-black ${stat.color} mb-1`}>{stat.value}</h3>
-              <p className="text-xs text-gray-400">{stat.sub}</p>
-            </div>
-          ))}
+        {/* 🔥 Daily Motivation (REPLACED STATS) */}
+        <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 mb-8 text-center">
+          <p className="text-sm uppercase tracking-widest text-blue-500 font-semibold mb-2">
+            Daily Motivation
+          </p>
+
+          <h2 className="text-2xl md:text-3xl font-black text-gray-800 mb-4 leading-snug">
+            “{quote}”
+          </h2>
+
+          <p className="text-sm text-gray-400">New quote every day ✨</p>
         </div>
 
         {/* Section Title */}
