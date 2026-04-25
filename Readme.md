@@ -1,184 +1,89 @@
-🚀 PrepSync
-🧠 Sync your syllabus. Own your exam.
+# PrepSync 🎓
 
-An AI-powered full-stack platform that transforms syllabus into a personalized, adaptive study system using intelligent planning and exam pattern analysis.
+> **Sync your syllabus. Own your exam.**
 
-🌟 Why PrepSync?
+PrepSync is an AI-powered exam preparation platform built for KIIT students. Upload your syllabus, get a personalized day-wise study plan, analyze previous year papers, track your progress, and get instant doubt resolution — all in one place.
 
-Most students:
+---
 
-❌ Follow random study plans
-❌ Ignore PYQs
-❌ Don’t track progress
+## 🌟 Features
 
-PrepSync solves this using AI.
+- 📄 **AI Study Planner** — Upload syllabus PDF → AI generates a personalized day-wise plan
+- 📝 **PYQ Analyzer** — Upload previous year papers → AI identifies most important topics
+- 📊 **Progress Tracker** — Track topic completion with beautiful charts
+- 🧠 **Gyani AI Tutor** — Ask any subject doubt, get instant explanations
+- ⚡ **Study Hub** — Focus Zone timer, today's topics, custom task list
+- 🔐 **KIIT Exclusive** — Only @kiit.ac.in emails allowed
 
-👉 It converts:
+---
 
-📄 Syllabus → Structured topics
-📝 PYQs → Important concepts
-📊 Progress → Readiness score
+## 🛠️ Tech Stack
 
-➡️ Into a smart daily study plan
+| Layer | Technology |
+|---|---|
+| Frontend | React, Vite, Tailwind CSS |
+| Backend | Node.js, Express.js |
+| Database | MongoDB Atlas |
+| AI | Groq API (Llama 3.3 70B) |
+| Auth | JWT, bcryptjs |
+| File Upload | Multer |
+| Charts | Recharts |
 
-🧠 Core Idea
+---
 
-PrepSync is not just a planner — it's an:
+## 🚀 Getting Started
 
-AI-powered exam intelligence system
+### Prerequisites
+- Node.js v18+
+- MongoDB Atlas account
+- Groq API key
 
-It understands:
+### Installation
 
-What to study
-When to study
-How much to study
-What matters most in exams
-✨ Features
-🔐 Smart Authentication
-JWT-based secure login
-Password hashing (bcrypt)
-🎓 Only @kiit.ac.in users allowed
-📄 AI Syllabus Parser
-Upload syllabus (PDF)
-AI extracts:
-Topics
-Subtopics
-Converts into structured data
-🗓️ Personalized Study Planner
-Generates day-wise schedule based on:
-Days remaining
-Study hours
-Revision / first-time mode
-Test type (short / long)
-📝 PYQ Analyzer
-Upload previous year papers
-AI identifies:
-High-frequency topics
-Important concepts
-Adds weightage to planner
-📊 Progress Tracking
-Track completed topics
-Visual analytics dashboard
-📈 Exam readiness score
-🤖 AI Doubt Solver
-Chat-based tutor
-Context-aware answers
-⚡ Smart System Features
-🔄 Adaptive replanning
-🧠 Weak area detection
-📌 Difficulty tagging
-⏱️ Pomodoro timer
-🏗️ Architecture
-Frontend (React + Tailwind)
-        ↓
-API Layer (Axios)
-        ↓
-Backend (Node.js + Express)
-        ↓
-Database (MongoDB)
-        ↓
-AI Layer (Claude API)
-        ↓
-PDF Processing (Multer + pdf-parse)
-🛠️ Tech Stack
-🎨 Frontend
-React.js
-Tailwind CSS
-React Router
-Axios
-Recharts
-⚙️ Backend
-Node.js
-Express.js
-🗄️ Database
-MongoDB + Mongoose
-🔐 Authentication
-JWT
-bcrypt
-🤖 AI Integration
-Claude / Gemini API
-📂 Tools
-Multer (file upload)
-PDF parsing
-Nodemailer
-🧱 Project Structure
-prepsync/
-│
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── routes/
-│   │   ├── models/
-│   │   ├── middleware/
-│   │   └── services/
-│   └── server.js
-│
-├── frontend/
-│   ├── src/
-│   │   ├── pages/
-│   │   ├── components/
-│   │   ├── context/
-│   │   └── services/
-│   └── App.jsx
-│
-└── README.md
-⚙️ Setup Guide
-1️⃣ Clone Repo
-git clone https://github.com/your-username/prepsync.git
+```bash
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/prepsync.git
 cd prepsync
-2️⃣ Backend Setup
+
+# Install backend dependencies
 cd backend
 npm install
 
-Create .env:
-
-PORT=5000
-MONGO_URI=your_mongodb_uri
-JWT_SECRET=your_secret
-
-Run:
-
-npm run dev
-3️⃣ Frontend Setup
-cd frontend
+# Install frontend dependencies
+cd ../frontend
 npm install
+```
+
+### Environment Variables
+
+Create `backend/.env`:
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+GROQ_API_KEY=your_groq_api_key
+
+### Run Locally
+
+```bash
+# Run backend (from backend/)
 npm run dev
-🔗 API Overview
-Auth Routes
-POST /api/auth/register
-POST /api/auth/login
-Protected Routes
-Authorization: Bearer <token>
-🧠 Key Concepts Demonstrated
-Full-stack development (React + Node + MongoDB)
-JWT authentication & middleware
-AI integration in real applications
-File handling (PDF upload + parsing)
-Context API (global state management)
-REST API architecture
-💼 Why This Project Stands Out
 
-✅ Not a basic CRUD app
-✅ Real-world problem solving
-✅ AI + Full Stack combination
-✅ Strong interview discussion points
+# Run frontend (from frontend/)
+npm run dev
+```
 
-🗣️ Interview Talking Points
-How AI generates personalized plans
-How PDF parsing works
-JWT authentication flow
-Database schema design
-Handling file uploads
-🚀 Future Scope
-Multi-college login system (IIT, NIT, etc.)
-Mobile app version
-Collaborative study rooms
-Advanced analytics
-👨‍💻 Author
+---
 
-Sohan Barat
-Full Stack Developer | AI Enthusiast
 
-⭐ Support
+## 👨‍💻 Developer
 
-If you like this project, give it a ⭐ on GitHub!
+**Sohan Barat**
+- 📧 sohanbarat2003@gmail.com
+- 🔗 [LinkedIn](https://linkedin.com/in/your-profile)
+- 🐙 [GitHub](https://github.com/your-username)
+
+---
+
+## 📄 License
+
+MIT License — feel free to use and modify.
