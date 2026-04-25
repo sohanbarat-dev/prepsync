@@ -15,8 +15,7 @@ const app = express()
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://prepsync.vercel.app',
-    'https://prepsync-frontend.vercel.app'
+    'https://prepsync-rouge.vercel.app'
   ],
   credentials: true
 }))
