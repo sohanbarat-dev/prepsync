@@ -12,7 +12,14 @@ const doubtRoutes = require('./src/routes/doubtRoutes')
 
 const app = express()
 
-app.use(cors({ origin: 'http://localhost:5173' }))
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://prepsync.vercel.app',
+    'https://prepsync-frontend.vercel.app'
+  ],
+  credentials: true
+}))
 app.use(express.json())
 
 app.use('/api/auth', authRoutes)
